@@ -1,0 +1,54 @@
+name: persistent-activerecord-ecto
+version: '0.1.0.0'
+category: Web
+author: Christopher Allen
+maintainer: cma@bitemyapp.com
+copyright: 2017 Christopher Allen
+license: BSD3
+github: bitemyapp/persistent-activerecord-ecto
+
+extra-source-files:
+- README.md
+
+default-extensions:
+  - ConstraintKinds
+  - FlexibleContexts
+  - FlexibleInstances
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - MultiParamTypeClasses
+  - OverloadedStrings
+  - QuasiQuotes
+  - RankNTypes
+  - TemplateHaskell
+  - TypeApplications
+  - TypeFamilies
+
+dependencies:
+  - containers
+  - esqueleto
+  - exceptions
+  - persistent
+  - persistent-sqlite
+  - persistent-template
+  - pretty-show
+  - text
+  - transformers
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - Lib
+  dependencies:
+  - base >=4.7 && <5
+executables:
+  persistent-activerecord-ecto-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - persistent-activerecord-ecto

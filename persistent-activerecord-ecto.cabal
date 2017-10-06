@@ -1,0 +1,64 @@
+-- This file has been generated from package.yaml by hpack version 0.17.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:                persistent-activerecord-ecto
+version:             0.1.0.0
+homepage:            https://github.com/bitemyapp/persistent-activerecord-ecto#readme
+bug-reports:         https://github.com/bitemyapp/persistent-activerecord-ecto/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Christopher Allen
+maintainer:          cma@bitemyapp.com
+copyright:           2017 Christopher Allen
+category:            Web
+build-type:          Simple
+cabal-version:       >= 1.10
+
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/bitemyapp/persistent-activerecord-ecto
+
+library
+  hs-source-dirs:
+      src
+  default-extensions: ConstraintKinds FlexibleContexts FlexibleInstances GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings QuasiQuotes RankNTypes TemplateHaskell TypeApplications TypeFamilies
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_persistent_activerecord_ecto
+  build-depends:
+      containers
+    , esqueleto
+    , exceptions
+    , persistent
+    , persistent-sqlite
+    , persistent-template
+    , pretty-show
+    , text
+    , transformers
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+executable persistent-activerecord-ecto-exe
+  hs-source-dirs:
+      app
+  default-extensions: ConstraintKinds FlexibleContexts FlexibleInstances GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings QuasiQuotes RankNTypes TemplateHaskell TypeApplications TypeFamilies
+  main-is: Main.hs
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      containers
+    , esqueleto
+    , exceptions
+    , persistent
+    , persistent-sqlite
+    , persistent-template
+    , pretty-show
+    , text
+    , transformers
+    , base
+    , persistent-activerecord-ecto
+  default-language: Haskell2010
